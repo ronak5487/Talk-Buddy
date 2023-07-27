@@ -1,0 +1,21 @@
+.messages {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+/* WebKit-based browsers (Chrome, Safari) */
+.messages::-webkit-scrollbar {
+  width: 8px; /* Adjust the width of the scrollbar */
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb */
+  border-radius: 4px; /* Rounded corners for the scrollbar thumb */
+}
+
+/* Firefox */
+.messages {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f0f0f0; /* Color of the scrollbar thumb and track */
+}
