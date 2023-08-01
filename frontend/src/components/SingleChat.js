@@ -83,7 +83,7 @@ const fetchMessages = async () => {
       setLoading(true);
 
       const { data } = await axios.get(
-        `/api/messages/${selectedChat._id}`,
+        `https://talk-buddy.onrender.com/api/messages/${selectedChat._id}`,
         config
       );
       setMessages(data);
