@@ -38,7 +38,7 @@ const UpdateGroupChatModal = ({fetchAgain,setFetchAgain,fetchMessages}) => {
    }
    const chatId=selectedChat._id;
    const chatname=groupChatName
-   const {data}=await axios.put("http://localhost:5000/api/chats/rename",{chatId,chatname},config);
+   const {data}=await axios.put("https://talk-buddy.onrender.com/api/chats/rename",{chatId,chatname},config);
    console.log(data);
    setSelectedChat(data);
    setFetchAgain(!fetchAgain);

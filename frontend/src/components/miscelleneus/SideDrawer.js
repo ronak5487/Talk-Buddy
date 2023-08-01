@@ -56,7 +56,7 @@ const SideDrawer = () => {
             Authorization: `Bearer ${user.token}`
           }
          }
-         const {data}= await axios.get(`http://localhost:5000/api/users?search=${search}`,config);
+         const {data}= await axios.get(`https://talk-buddy.onrender.com/api/users?search=${search}`,config);
          console.log(data);
          setLoading(false)
          setSearchResult(data);
@@ -85,7 +85,7 @@ const SideDrawer = () => {
           "content-type":"application/json"
         }
        }
-       const {data}=await axios.post("http://localhost:5000/api/chats/accesschat",{userId},config);
+       const {data}=await axios.post("https://talk-buddy.onrender.com/api/chats/accesschat",{userId},config);
        if(!chats.find((c)=>c._id===data._id))setChats([data,...chats]);
        console.log(data);
        setChatloading(false)

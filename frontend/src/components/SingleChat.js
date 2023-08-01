@@ -23,7 +23,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
   const toast = useToast();
   const { selectedChat, setSelectedChat, user, notification, setNotification } =
     ChatState();
-    const ENDPOINT="http://localhost:5000"
+    const ENDPOINT="https://talk-buddy.onrender.com/"
 
     useEffect(()=>{
      socket =io(ENDPOINT);
@@ -52,7 +52,7 @@ const sendMessage=async(event)=>{
                 }
                }
                setNewMessage("");
-               const {data}= await axios.post(`http://localhost:5000/api/messages/sendmessage`,{content:newMessage,chatId:selectedChat._id},config);
+               const {data}= await axios.post(`https://talk-buddy.onrender.com/api/messages/sendmessage`,{content:newMessage,chatId:selectedChat._id},config);
                console.log(data);
                socket.emit("new message",data);
               setMessages([...messages,data])

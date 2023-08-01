@@ -22,7 +22,7 @@ const GroupChatModal = ({children}) => {
                 Authorization:`Bearer ${user.token}`
             }
         }
-        const {data}=await axios.get(`http://localhost:5000/api/users?search=${query}`,config);
+        const {data}=await axios.get(`https://talk-buddy.onrender.com/api/users?search=${query}`,config);
         console.log(data);
         setLoading(false);
         setSearchResult(data);
@@ -76,7 +76,7 @@ const GroupChatModal = ({children}) => {
                 Authorization:`Bearer ${user.token}`
             }
         }
-        const {data}=await axios.post("http://localhost:5000/api/chats/creategroup",{name:groupChatName,
+        const {data}=await axios.post("https://talk-buddy.onrender.com/api/chats/creategroup",{name:groupChatName,
         users:selectedUsers.map((u)=>u._id)},
         config);
         console.log(data);

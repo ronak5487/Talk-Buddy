@@ -25,7 +25,7 @@ const MyChats = ({fetchAgain,setFetchAgain}) => {
             Authorization:`Bearer ${user.token}`
           }
         }
-        const {data}=await axios.get("http://localhost:5000/api/chats/fetchchat",config);
+        const {data}=await axios.get("https://talk-buddy.onrender.com/api/chats/fetchchat",config);
         console.log(data);
         setChats(data);
        }
