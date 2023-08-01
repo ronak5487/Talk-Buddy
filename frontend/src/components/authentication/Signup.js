@@ -103,7 +103,7 @@ const Signup = () => {
 
       },
      };
-     const {data,status}= await axios.post("/api/users/register",{name,email,password,pic},config);
+     const {data,status}= await axios.post("https://talk-buddy.onrender.com/api/users/register",{name,email,password,pic},config);
 
      console.log(status);
      console.log(data);

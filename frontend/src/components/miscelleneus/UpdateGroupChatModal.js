@@ -72,7 +72,7 @@ setGroupChatName("");
        Authorization: `Bearer ${user.token}`
      }
     }
-    const {data}= await axios.get(`http://localhost:5000/api/users?search=${search}`,config);
+    const {data}= await axios.get(`https://talk-buddy.onrender.com/api/users?search=${search}`,config);
     console.log(data);
     setLoading(false)
     setSearchResult(data);
@@ -118,7 +118,7 @@ const handleAddUser=async(user1)=>{
           Authorization: `Bearer ${user.token}`
         }
        }
-       const {data}= await axios.put(`http://localhost:5000/api/chats/addtogrp`,{userId:user1._id,chatid:selectedChat._id},config);
+       const {data}= await axios.put(`https://talk-buddy.onrender.com/api/chats/addtogrp`,{userId:user1._id,chatid:selectedChat._id},config);
        console.log(data);
        setSelectedChat(data);
        setFetchAgain(!fetchAgain);
@@ -158,7 +158,7 @@ const handleRemove=async(user1)=>{
               Authorization: `Bearer ${user.token}`
             }
            }
-           const {data}= await axios.put(`http://localhost:5000/api/chats/removefromgrp`,{userId:user1._id,chatId:selectedChat._id},config);
+           const {data}= await axios.put(`https://talk-buddy.onrender.com/api/chats/removefromgrp`,{userId:user1._id,chatId:selectedChat._id},config);
            console.log(data);
            user._id===user1._id?setSelectedChat():setSelectedChat(data);
            setFetchAgain(!fetchAgain);

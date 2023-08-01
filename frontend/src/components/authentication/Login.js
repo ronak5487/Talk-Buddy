@@ -30,7 +30,7 @@ const Login = () => {
           "content-type":"application/json"
       }
     }
-    const {status,data}= await axios.post("/api/users/login",{email,password},config);
+    const {status,data}= await axios.post("https://talk-buddy.onrender.com/api/users/login",{email,password},config);
     console.log(data);
     setLoading(false);
       if(status==201){toast({
